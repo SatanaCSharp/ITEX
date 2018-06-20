@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Company;
+use App\Comment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
-class CompaniesController extends Controller
+class CommentsController extends Controller
 {
 
     /**
@@ -21,9 +21,9 @@ class CompaniesController extends Controller
     public function index()
     {
         $itemsPerPage = 15;
-        $companies = Company::paginate($itemsPerPage);
+        $comments = Comment::paginate($itemsPerPage);
 
-        return view('backEnd.admin.companies.index', compact('companies'));
+        return view('backEnd.admin.comments.index', compact('comments'));
     }
 
     /**
@@ -33,7 +33,7 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        return view('backEnd.admin.companies.create');
+        return view('backEnd.admin.comments.create');
     }
 
     /**
@@ -43,14 +43,14 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['title' => 'required', 'description' => 'required', 'contacts' => 'required', 'location' => 'required', ]);
+        $this->validate($request, ['description' => 'required', 'user_id' => 'required', 'report_id' => 'required', ]);
 
-        Company::create($request->all());
+        Comment::create($request->all());
 
-        Session::flash('message', 'Company added!');
+        Session::flash('message', 'Comment added!');
         Session::flash('status', 'success');
 
-        return redirect('admin/companies');
+        return redirect('admin/comments');
     }
 
     /**
@@ -62,9 +62,9 @@ class CompaniesController extends Controller
      */
     public function show($id)
     {
-        $company = Company::findOrFail($id);
+        $comment = Comment::findOrFail($id);
 
-        return view('backEnd.admin.companies.show', compact('company'));
+        return view('backEnd.admin.comments.show', compact('comment'));
     }
 
     /**
@@ -76,9 +76,9 @@ class CompaniesController extends Controller
      */
     public function edit($id)
     {
-        $company = Company::findOrFail($id);
+        $comment = Comment::findOrFail($id);
 
-        return view('backEnd.admin.companies.edit', compact('company'));
+        return view('backEnd.admin.comments.edit', compact('comment'));
     }
 
     /**
@@ -90,15 +90,15 @@ class CompaniesController extends Controller
      */
     public function update($id, Request $request)
     {
-        $this->validate($request, ['title' => 'required', 'description' => 'required', 'contacts' => 'required', 'location' => 'required', ]);
+        $this->validate($request, ['description' => 'required', 'user_id' => 'required', 'report_id' => 'required', ]);
 
-        $company = Company::findOrFail($id);
-        $company->update($request->all());
+        $comment = Comment::findOrFail($id);
+        $comment->update($request->all());
 
-        Session::flash('message', 'Company updated!');
+        Session::flash('message', 'Comment updated!');
         Session::flash('status', 'success');
 
-        return redirect('admin/companies');
+        return redirect('admin/comments');
     }
 
     /**
@@ -110,14 +110,14 @@ class CompaniesController extends Controller
      */
     public function destroy($id)
     {
-        $company = Company::findOrFail($id);
+        $comment = Comment::findOrFail($id);
 
-        $company->delete();
+        $comment->delete();
 
-        Session::flash('message', 'Company deleted!');
+        Session::flash('message', 'Comment deleted!');
         Session::flash('status', 'success');
 
-        return redirect('admin/companies');
+        return redirect('admin/comments');
     }
 
 }

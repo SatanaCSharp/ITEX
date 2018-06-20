@@ -9,15 +9,16 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-     const ADMIN = 1;
-     const USER = 2;
+    const ADMIN = 1;
+    const USER = 2;
+    const MANAGER = 3;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','last_name', 'email', 'password', 'role',
     ];
 
     /**
@@ -36,6 +37,19 @@ class User extends Authenticatable
             return $this->role == User::ADMIN;
         }
         return false;
+    }
+
+    public function companies()
+{
+    return $this->hasOne('App\Company');
+}
+
+    public function partisipants(){
+        return $this->hasMany('App\Partisipant');
+    }
+
+    public function comments(){
+        return $this->hasMany('App\Comment');
     }
 
 }

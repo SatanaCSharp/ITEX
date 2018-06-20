@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Company extends Model
+class Comment extends Model
 {
 
     /**
@@ -13,25 +13,26 @@ class Company extends Model
      *
      * @var string
      */
-    protected $table = 'companies';
+    protected $table = 'comments';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['logo', 'title', 'description', 'contacts', 'location', 'user_id'];
+    protected $fillable = ['description', 'user_id', 'report_id'];
 
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
+
+    public function report()
+    {
+        return $this->belongsTo('App\Report','report_id');
+    }
     public function users()
     {
         return $this->belongsTo('App\User','user_id');
     }
 
-    public function events()
-    {
-        return $this->hasMany('App\Event');
-    }
 }

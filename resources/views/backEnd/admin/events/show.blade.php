@@ -1,0 +1,24 @@
+@extends('backLayout.app')
+@section('title')
+Event
+@stop
+
+@section('content')
+
+    <h1>Event</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID.</th> <th>Title</th><th>Description</th><th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ $event->id }}</td> <td> {{ $event->title }} </td><td> {{ $event->description }} </td><td> {{ $event->date }} </td>
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+
+@endsection
