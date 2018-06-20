@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Company;
+use App\Event;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
-class CompaniesController extends Controller
+class EventsController extends Controller
 {
 
     /**
@@ -21,9 +21,9 @@ class CompaniesController extends Controller
     public function index()
     {
         $itemsPerPage = 15;
-        $companies = Company::paginate($itemsPerPage);
+        $events = Event::paginate($itemsPerPage);
 
-        return view('backEnd.admin.companies.index', compact('companies'));
+        return view('backEnd.admin.events.index', compact('events'));
     }
 
     /**
@@ -33,7 +33,7 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        return view('backEnd.admin.companies.create');
+        return view('backEnd.admin.events.create');
     }
 
     /**
@@ -43,14 +43,14 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['title' => 'required', 'description' => 'required', 'contacts' => 'required', 'location' => 'required', ]);
+        $this->validate($request, ['title' => 'required', 'description' => 'required', 'date' => 'required', 'state' => 'required', 'duration' => 'required', 'company_id' => 'required', ]);
 
-        Company::create($request->all());
+        Event::create($request->all());
 
-        Session::flash('message', 'Company added!');
+        Session::flash('message', 'Event added!');
         Session::flash('status', 'success');
 
-        return redirect('admin/companies');
+        return redirect('admin/events');
     }
 
     /**
@@ -62,9 +62,9 @@ class CompaniesController extends Controller
      */
     public function show($id)
     {
-        $company = Company::findOrFail($id);
+        $event = Event::findOrFail($id);
 
-        return view('backEnd.admin.companies.show', compact('company'));
+        return view('backEnd.admin.events.show', compact('event'));
     }
 
     /**
@@ -76,9 +76,9 @@ class CompaniesController extends Controller
      */
     public function edit($id)
     {
-        $company = Company::findOrFail($id);
+        $event = Event::findOrFail($id);
 
-        return view('backEnd.admin.companies.edit', compact('company'));
+        return view('backEnd.admin.events.edit', compact('event'));
     }
 
     /**
@@ -90,15 +90,15 @@ class CompaniesController extends Controller
      */
     public function update($id, Request $request)
     {
-        $this->validate($request, ['title' => 'required', 'description' => 'required', 'contacts' => 'required', 'location' => 'required', ]);
+        $this->validate($request, ['title' => 'required', 'description' => 'required', 'date' => 'required', 'state' => 'required', 'duration' => 'required', 'company_id' => 'required', ]);
 
-        $company = Company::findOrFail($id);
-        $company->update($request->all());
+        $event = Event::findOrFail($id);
+        $event->update($request->all());
 
-        Session::flash('message', 'Company updated!');
+        Session::flash('message', 'Event updated!');
         Session::flash('status', 'success');
 
-        return redirect('admin/companies');
+        return redirect('admin/events');
     }
 
     /**
@@ -110,14 +110,14 @@ class CompaniesController extends Controller
      */
     public function destroy($id)
     {
-        $company = Company::findOrFail($id);
+        $event = Event::findOrFail($id);
 
-        $company->delete();
+        $event->delete();
 
-        Session::flash('message', 'Company deleted!');
+        Session::flash('message', 'Event deleted!');
         Session::flash('status', 'success');
 
-        return redirect('admin/companies');
+        return redirect('admin/events');
     }
 
 }
