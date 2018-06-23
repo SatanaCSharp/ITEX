@@ -28,3 +28,4 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin', 'namespace' => 'Admi
         Route::resource('/comments', 'CommentsController');
 });
 
+Route::get('/', 'MainController@index');
