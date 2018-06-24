@@ -21,6 +21,7 @@ class CommentsController extends Controller
     public function index()
     {
         $itemsPerPage = 15;
+
         $comments = Comment::paginate($itemsPerPage);
 
         return view('backEnd.admin.comments.index', compact('comments'));
