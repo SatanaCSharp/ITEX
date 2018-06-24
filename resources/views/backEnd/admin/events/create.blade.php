@@ -8,7 +8,7 @@
     <h1>Create New Event</h1>
     <hr/>
 
-    {!! Form::open(['url' => 'admin/events', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['url' => 'admin/companies/'.$id.'/events', 'class' => 'form-horizontal']) !!}
 
     <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">
         {!! Form::label('title', 'Title: ', ['class' => 'col-sm-3 control-label']) !!}
@@ -48,7 +48,7 @@
     <div class="form-group {{ $errors->has('company_id') ? 'has-error' : ''}}">
         {!! Form::label('company_id', 'Company Id: ', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-6">
-            {!! Form::number('company_id', null, ['class' => 'form-control', 'required' => 'required']) !!}
+            {!! Form::number('company_id', $id, ['class' => 'form-control disabled', 'required' => 'required']) !!}
             {!! $errors->first('company_id', '<p class="help-block">:message</p>') !!}
         </div>
     </div>

@@ -21,7 +21,9 @@
                 <td>{{ $company->id }}</td>
                 <td> {{ $company->logo }} </td>
                 <td> {{ $company->title }} </td>
+                <td> {{ $company->adress }} </td>
                 <td> {{ $company->description }} </td>
+
             </tr>
             </tbody>
         </table>

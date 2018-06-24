@@ -18,12 +18,13 @@ class ReportsController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($idEvent)
     {
-        $itemsPerPage = 15;
-        $reports = Report::paginate($itemsPerPage);
 
-        return view('backEnd.admin.reports.index', compact('reports'));
+        $itemsPerPage = 15;
+        $reports = Report::where('event_id',$idEvent)->paginate($itemsPerPage);
+
+        return view('backEnd.admin.reports.index', ['reports'=>$reports,'idEvent'=>$idEvent]);
     }
 
     /**
@@ -31,9 +32,10 @@ class ReportsController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($idEvent)
     {
-        return view('backEnd.admin.reports.create');
+        $eventId = $idEvent;
+        return view('backEnd.admin.reports.create',['idEvent'=>$eventId]);
     }
 
     /**
@@ -41,16 +43,22 @@ class ReportsController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$idEvent)
     {
-        $this->validate($request, ['title' => 'required', 'description' => 'required', 'date_creation' => 'required', 'images' => 'required', 'event_id' => 'required', ]);
+        $this->validate($request, [
+            'title'         => 'required',
+            'description'   => 'required',
+            'date_creation' => 'required',
+            'images'        => 'required',
+            'event_id'      => 'required',
+            ]);
 
         Report::create($request->all());
 
         Session::flash('message', 'Report added!');
         Session::flash('status', 'success');
 
-        return redirect('admin/reports');
+        return redirect('admin/events/'.$idEvent.'/reports');
     }
 
     /**
@@ -62,9 +70,11 @@ class ReportsController extends Controller
      */
     public function show($id)
     {
+
         $report = Report::findOrFail($id);
 
         return view('backEnd.admin.reports.show', compact('report'));
+
     }
 
     /**
@@ -76,9 +86,10 @@ class ReportsController extends Controller
      */
     public function edit($id)
     {
+        $eventId = $id;
         $report = Report::findOrFail($id);
 
-        return view('backEnd.admin.reports.edit', compact('report'));
+        return view('backEnd.admin.reports.edit',['report'=>$report,'idEvent'=>$eventId]);
     }
 
     /**
@@ -88,9 +99,15 @@ class ReportsController extends Controller
      *
      * @return Response
      */
-    public function update($id, Request $request)
+    public function update($idEvent,$id, Request $request)
     {
-        $this->validate($request, ['title' => 'required', 'description' => 'required', 'date_creation' => 'required', 'images' => 'required', 'event_id' => 'required', ]);
+
+        $this->validate($request, [
+            'title'         => 'required',
+            'description'   => 'required',
+            'date_creation' => 'required',
+            'images'        => 'required',
+            'event_id'      => 'required', ]);
 
         $report = Report::findOrFail($id);
         $report->update($request->all());
@@ -98,7 +115,7 @@ class ReportsController extends Controller
         Session::flash('message', 'Report updated!');
         Session::flash('status', 'success');
 
-        return redirect('admin/reports');
+        return redirect('admin/events/'.$idEvent.'/reports');
     }
 
     /**
@@ -108,7 +125,7 @@ class ReportsController extends Controller
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($idEvent, $id)
     {
         $report = Report::findOrFail($id);
 
@@ -117,7 +134,7 @@ class ReportsController extends Controller
         Session::flash('message', 'Report deleted!');
         Session::flash('status', 'success');
 
-        return redirect('admin/reports');
+        return redirect('admin/events/'.$idEvent.'/reports');
     }
 
 }
