@@ -19,13 +19,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//
 Route::group(['middleware' => ['auth'],'prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
         Route::resource('/companies', 'CompaniesController');
-        Route::resource('/events', 'EventsController');
-        Route::resource('/reports', 'ReportsController');
-        Route::resource('/comments', 'CommentsController');
+
+        Route::resource('/companies.events', 'EventsController');
+
+        Route::resource('/events.reports', 'ReportsController');
+
+        Route::resource('/reports.comments', 'CommentsController');
+
 });
 
 Route::get('/', 'MainController@index');

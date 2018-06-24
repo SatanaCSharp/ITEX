@@ -10,7 +10,7 @@
 
     {!! Form::model($event, [
         'method' => 'PATCH',
-        'url' => ['admin/events', $event->id],
+        'url' => ['admin/companies/'.$idCompany.'/events', $event->id],
         'class' => 'form-horizontal'
     ]) !!}
 

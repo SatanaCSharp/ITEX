@@ -8,7 +8,7 @@
     <h1>Comments <a href="{{ url('admin/comments/create') }}" class="btn btn-primary pull-right btn-sm">Add New
             Comment</a></h1>
     <div class="table table-responsive">
-        <table class="table table-bordered table-striped table-hover" id="tbladmin/comments">
+        <table class="table table-bordered table-striped table-hover" id="tbladmin-comments">
             <thead>
             <tr>
                 <th>ID</th>
@@ -46,7 +46,7 @@
 @section('scripts')
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#tbladmin/comments').DataTable({
+            $('#tbladmin-comments').DataTable({
                 columnDefs: [{
                     targets: [0],
                     visible: false,

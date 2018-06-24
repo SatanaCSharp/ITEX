@@ -5,12 +5,13 @@
 
 @section('content')
 
-    <h1>Edit Report</h1>
+   <center><h1>Edit Report</h1></center>
+
     <hr/>
 
     {!! Form::model($report, [
         'method' => 'PATCH',
-        'url' => ['admin/reports', $report->id],
+        'url' => ['admin/events/'.$idEvent.'/reports', $report->id],
         'class' => 'form-horizontal'
     ]) !!}
 

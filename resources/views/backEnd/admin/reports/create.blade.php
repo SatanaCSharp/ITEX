@@ -8,7 +8,7 @@
     <h1>Create New Report</h1>
     <hr/>
 
-    {!! Form::open(['url' => 'admin/reports', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['url' => 'admin/events/'.$idEvent.'/reports', 'class' => 'form-horizontal']) !!}
 
     <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">
         {!! Form::label('title', 'Title: ', ['class' => 'col-sm-3 control-label']) !!}
@@ -41,7 +41,7 @@
     <div class="form-group {{ $errors->has('event_id') ? 'has-error' : ''}}">
         {!! Form::label('event_id', 'Event Id: ', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-6">
-            {!! Form::number('event_id', null, ['class' => 'form-control', 'required' => 'required']) !!}
+            {!! Form::number('event_id', $idEvent, ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('event_id', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
