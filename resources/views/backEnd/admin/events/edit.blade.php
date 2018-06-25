@@ -31,8 +31,11 @@
     <div class="form-group {{ $errors->has('date') ? 'has-error' : ''}}">
         {!! Form::label('date', 'Date: ', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-6">
-            {!! Form::text('date', null, ['class' => 'form-control', 'required' => 'required']) !!}
-            {!! $errors->first('date', '<p class="help-block">:message</p>') !!}
+            <div class='input-group date' id='datetimepicker1'>
+                {!! Form::text('date', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                {!! $errors->first('date', '<p class="help-block">:message</p>') !!}
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
         </div>
     </div>
     <div class="form-group {{ $errors->has('state') ? 'has-error' : ''}}">

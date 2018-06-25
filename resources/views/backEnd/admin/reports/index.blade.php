@@ -13,7 +13,7 @@
         <table class="table table-bordered table-striped table-hover" id="tbladmin-reports">
             <thead>
             <tr>
-                <th></th>
+
                 <th>ID</th>
                 <th>Title</th>
                 <th>Description</th>
@@ -25,7 +25,6 @@
             <tbody>
             @foreach($reports as $item)
                 <tr>
-                    <td></td>
                     <td>{{ $item->id }}</td>
                     <td><a href="{{ url('admin/events/'.$idEvent.'/reports', $item->id) }}">{{ $item->title }}</a></td>
                     <td>{{ substr($item->description,0,30) }}...</td>

@@ -19,7 +19,6 @@
         <table class="table table-bordered table-striped table-hover" id="tbladmin-events">
             <thead>
             <tr>
-                <th></th>
                 <th>ID</th>
                 <th>Title</th>
                 <th>Description</th>
@@ -32,7 +31,6 @@
             <tbody>
             @foreach($events as $item)
                 <tr>
-                    <td></td>
                     <td>{{ $item->id }}</td>
                     <td>
                         <a href="{{ url('admin/companies/'.$idCompany.'/events/', $item->id) }}">{{ $item->title }}</a>
