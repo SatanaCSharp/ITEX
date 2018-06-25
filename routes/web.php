@@ -31,4 +31,4 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin', 'namespace' => 'Admi
 
 });
 
-Route::get('/', 'MainController@index');
+Route::get('/home', 'MainController@index');
