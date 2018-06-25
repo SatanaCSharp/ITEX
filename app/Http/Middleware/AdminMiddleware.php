@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
+
 class AdminMiddleware
 {
     /**
@@ -15,7 +17,7 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (LoginController::user()->isAdmin())
+        if (Auth::User()->isAdmin())
         {
             return $next($request);
         }else{

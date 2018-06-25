@@ -8,7 +8,7 @@
     <h1>Create New Comment</h1>
     <hr/>
 
-    {!! Form::open(['url' => 'admin/comments', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['url' => 'admin/reports/'.$idReport.'/comments', 'class' => 'form-horizontal']) !!}
 
     <div class="form-group {{ $errors->has('description') ? 'has-error' : ''}}">
         {!! Form::label('description', 'Description: ', ['class' => 'col-sm-3 control-label']) !!}
@@ -20,14 +20,14 @@
     <div class="form-group {{ $errors->has('user_id') ? 'has-error' : ''}}">
         {!! Form::label('user_id', 'User Id: ', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-6">
-            {!! Form::number('user_id', null, ['class' => 'form-control', 'required' => 'required']) !!}
+            {!! Form::number('user_id',  $userId, ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('user_id', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('report_id') ? 'has-error' : ''}}">
         {!! Form::label('report_id', 'Report Id: ', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-6">
-            {!! Form::number('report_id', null, ['class' => 'form-control', 'required' => 'required']) !!}
+            {!! Form::number('report_id',$idReport, ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('report_id', '<p class="help-block">:message</p>') !!}
         </div>
     </div>

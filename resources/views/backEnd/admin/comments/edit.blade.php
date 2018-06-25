@@ -10,7 +10,7 @@
 
     {!! Form::model($comment, [
         'method' => 'PATCH',
-        'url' => ['admin/comments', $comment->id],
+        'url' => ['admin/reports/'.$reportId.'/comments', $comment->id],
         'class' => 'form-horizontal'
     ]) !!}
 
@@ -31,7 +31,7 @@
     <div class="form-group {{ $errors->has('report_id') ? 'has-error' : ''}}">
         {!! Form::label('report_id', 'Report Id: ', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-6">
-            {!! Form::number('report_id', null, ['class' => 'form-control', 'required' => 'required']) !!}
+            {!! Form::number('report_id', $reportId, ['class' => 'form-control', 'required' => 'required']) !!}
             {!! $errors->first('report_id', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
