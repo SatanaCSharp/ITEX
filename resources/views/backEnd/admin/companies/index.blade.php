@@ -14,7 +14,7 @@
         <table class="table table-bordered table-striped table-hover" id="tbladmin-companies">
             <thead>
             <tr>
-                <th></th>
+
                 <th>ID</th>
                 <th>Logo</th>
                 <th>Title</th>
@@ -25,7 +25,7 @@
             <tbody>
             @foreach($companies as $item)
                 <tr>
-                    <td></td>
+
                     <td>{{ $item->id }}</td>
                     <td><a href="{{ url('admin/companies', $item->id) }}">{{ $item->logo }}</a></td>
                     <td>{{ $item->title }}</td>

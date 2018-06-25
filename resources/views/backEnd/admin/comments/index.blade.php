@@ -11,7 +11,7 @@
         <table class="table table-bordered table-striped table-hover" id="tbladmin-comments">
             <thead>
             <tr>
-                <th></th>
+
                 <th>ID</th>
                 <th>Description</th>
                 <th>User Id</th>
@@ -22,7 +22,7 @@
             <tbody>
             @foreach($comments as $item)
                 <tr>
-                    <td></td>
+
                     <td>{{ $item->id }}</td>
                     <td><a href="{{ url('admin/reports/'.$idReport.'/comments', $item->id) }}">{{ substr($item->description,0,30) }}</a></td>
                     <td>{{ $item->user_id }}</td>
