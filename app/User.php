@@ -39,6 +39,14 @@ class User extends Authenticatable
         return false;
     }
 
+    public function isManager()
+    {
+        if (isset($this->role)) {
+            return $this->role == User::MANAGER;
+        }
+        return false;
+    }
+
     public function companies()
 {
     return $this->hasOne('App\Company');

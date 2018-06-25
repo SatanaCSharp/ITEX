@@ -60,6 +60,12 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Enter password one more time " required>
                             </div>
+
+                            <div class="col-md-6">
+                                <br>
+                                <label for="manager-checkbox" class="col-md-2 col-form-label text-md-right"> </label>
+                                <input id="manager-checkbox" type="checkbox"  name="manager">  Register as a manager
+                            </div>
                         </div>
 
                         <div class="form-group row mb-0">
