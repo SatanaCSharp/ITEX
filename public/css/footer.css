@@ -1,0 +1,41 @@
+h5 , i{
+    color:white;
+}
+
+.navigation:hover{
+    color: rgb(230, 247, 134);
+    text-decoration: none;
+}
+
+
+.page-footer{
+    background-color: rgba(15, 10, 10, 0.87);
+}
+
+.footer-copyright{
+    color:white;
+    text-decoration: none;
+}
+
+.social li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.myIntita{
+    color: white;
+    text-decoration: none;
+}
+
+.myIntita:hover {
+    text-decoration: none;
+    color:rgb(230, 247, 134);
+}
+hr {
+    border: none;
+    color:white;
+    background-color: white;
+    height: 2px;
+    width: 83%;
+}
