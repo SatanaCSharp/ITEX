@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Comment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class CommentsController extends Controller
@@ -18,13 +19,13 @@ class CommentsController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
+        $idReport = $id;
         $itemsPerPage = 15;
+        $comments = Comment::where('report_id', $idReport)->paginate($itemsPerPage);
 
-        $comments = Comment::paginate($itemsPerPage);
-
-        return view('backEnd.admin.comments.index', compact('comments'));
+        return view('backEnd.admin.comments.index', ['comments' => $comments, 'idReport' => $idReport]);
     }
 
     /**
@@ -32,9 +33,12 @@ class CommentsController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('backEnd.admin.comments.create');
+        $idReport = $id;
+        $userId = Auth::user()->id;
+
+        return view('backEnd.admin.comments.create', ['idReport' => $idReport, 'userId'=>$userId]);
     }
 
     /**
@@ -42,56 +46,61 @@ class CommentsController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $idReport)
     {
-        $this->validate($request, ['description' => 'required', 'user_id' => 'required', 'report_id' => 'required', ]);
+
+        $this->validate($request, [
+            'description' => 'required',
+            'user_id' => 'required',
+            'report_id' => 'required',
+        ]);
 
         Comment::create($request->all());
 
         Session::flash('message', 'Comment added!');
         Session::flash('status', 'success');
 
-        return redirect('admin/comments');
+        return redirect('admin/reports/' . $idReport . '/comments');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
-    public function show($id)
+    public function show($idReport, $id)
     {
         $comment = Comment::findOrFail($id);
-
         return view('backEnd.admin.comments.show', compact('comment'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit($idReport,$id)
     {
+        $reportId = $idReport;
         $comment = Comment::findOrFail($id);
 
-        return view('backEnd.admin.comments.edit', compact('comment'));
+        return view('backEnd.admin.comments.edit',['comment'=>$comment,'reportId'=>$reportId]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
-    public function update($id, Request $request)
+    public function update($idReport,$id, Request $request)
     {
-        $this->validate($request, ['description' => 'required', 'user_id' => 'required', 'report_id' => 'required', ]);
+        $this->validate($request, ['description' => 'required', 'user_id' => 'required', 'report_id' => 'required',]);
 
         $comment = Comment::findOrFail($id);
         $comment->update($request->all());
@@ -99,26 +108,26 @@ class CommentsController extends Controller
         Session::flash('message', 'Comment updated!');
         Session::flash('status', 'success');
 
-        return redirect('admin/comments');
+        return redirect('admin/reports/' . $idReport . '/comments');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($idReport,$id)
     {
+        $reportId = $idReport;
         $comment = Comment::findOrFail($id);
-
         $comment->delete();
 
         Session::flash('message', 'Comment deleted!');
         Session::flash('status', 'success');
 
-        return redirect('admin/comments');
+        return redirect('admin/reports/' . $reportId .'/comments');
     }
 
 }

@@ -72,7 +72,7 @@ class EventsController extends Controller
      *
      * @return Response
      */
-    public function show($id)
+    public function show($companyId,$id)
     {
         $event = Event::findOrFail($id);
 

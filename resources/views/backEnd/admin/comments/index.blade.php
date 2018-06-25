@@ -5,12 +5,13 @@
 
 @section('content')
 
-    <h1>Comments <a href="{{ url('admin/comments/create') }}" class="btn btn-primary pull-right btn-sm">Add New
+    <h1>Comments <a href="{{ url('admin/reports/'.$idReport.'/comments/create') }}" class="btn btn-primary pull-right btn-sm">Add New
             Comment</a></h1>
     <div class="table table-responsive">
         <table class="table table-bordered table-striped table-hover" id="tbladmin-comments">
             <thead>
             <tr>
+                <th></th>
                 <th>ID</th>
                 <th>Description</th>
                 <th>User Id</th>
@@ -21,15 +22,16 @@
             <tbody>
             @foreach($comments as $item)
                 <tr>
+                    <td></td>
                     <td>{{ $item->id }}</td>
-                    <td><a href="{{ url('admin/comments', $item->id) }}">{{ $item->description }}</a></td>
+                    <td><a href="{{ url('admin/reports/'.$idReport.'/comments', $item->id) }}">{{ substr($item->description,0,30) }}</a></td>
                     <td>{{ $item->user_id }}</td>
                     <td>{{ $item->report_id }}</td>
                     <td>
-                        <a href="{{ url('admin/comments/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs">Update</a>
+                        <a href="{{ url('admin/reports/'.$idReport.'/comments/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs">Update</a>
                         {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['admin/comments', $item->id],
+                            'url' => ['admin/reports/'.$idReport.'/comments', $item->id],
                             'style' => 'display:inline'
                         ]) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}

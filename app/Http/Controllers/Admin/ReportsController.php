@@ -45,6 +45,7 @@ class ReportsController extends Controller
      */
     public function store(Request $request,$idEvent)
     {
+
         $this->validate($request, [
             'title'         => 'required',
             'description'   => 'required',
@@ -68,11 +69,10 @@ class ReportsController extends Controller
      *
      * @return Response
      */
-    public function show($id)
+    public function show($idEvent,$id)
     {
 
         $report = Report::findOrFail($id);
-
         return view('backEnd.admin.reports.show', compact('report'));
 
     }
