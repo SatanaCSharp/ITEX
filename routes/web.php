@@ -31,4 +31,8 @@ Route::group(['middleware' => ['auth','admin'],'prefix' => 'admin', 'namespace' 
 
 });
 
+Route::group(['middleware' => ['auth','manager'],'prefix' => 'manager', 'namespace' => 'Manager'], function () {
+    Route::resource('/companies', 'CompaniesController');
+});
+
 Route::get('/', 'MainController@index');

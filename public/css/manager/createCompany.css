@@ -1,0 +1,57 @@
+.title-text {
+	margin: 3% 0 2% 0;
+	font-size: 270%;
+	text-align: center;
+	color:  #666666;
+	/*font-weight: bold;*/
+}
+
+.card {
+	width: 230px;
+	height: 230px;
+	overflow:hidden;
+    border: none;
+    margin-left: 10%;
+}
+
+.avatar-company {
+	display: flex;
+	margin-bottom: 3%;
+}
+
+#add {
+	width: 48px;
+	height: 38px;
+	background-color: #202349;
+	border: none;
+	display: block;
+	margin: 70px 0 0 8%;
+	padding: 4px;
+}
+
+#add img {
+	width: 45%;
+	height: 60%;
+}
+
+.form-group  {
+	padding: 1%;
+	margin-left: 8%;
+	width: 90%;
+}
+
+.col-md-3 {
+	color: #666666;
+	font-size: 210%;
+	margin-left: -5px;
+}
+
+.form-control {
+	background-color: #fcfbfa;
+	margin-left: 38px;
+}
+
+#btn-create {
+	background-color: #202349;
+	margin-left: 38px;
+}
