@@ -29,18 +29,19 @@
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
             @else
-                <li class="nav-item dropdown">
+                <li id="dropdown" class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {!! Html::image('images/user-image.png') !!}
                         {{ Auth::user()->name }} {{ Auth::user()->last_name }}<span class="caret"></span>
                     </a>
                     @if(Auth::user()->role==1)
-                        <span><h6>Admin</h6></span>
+                        <span class="role">Admin</span>
                     @endif
                     @if(Auth::user()->role==2)
-                        <span><h6>User</h6></span>
+                        <span class="role">User</span>
                     @endif
                     @if(Auth::user()->role==3)
-                        <span><h6>Manager</h6></span>
+                        <span class="role">Manager</span>
                     @endif
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}"

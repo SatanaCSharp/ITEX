@@ -27,9 +27,25 @@
 }
 
 #nav .authorization {
-	margin-right: 5%;
-	justify-content: space-between;
-	
+	width: 17%;
+	font-size: 90%;
+}
+
+#navbarDropdown {
+	width: 90%;
+}
+
+#dropdown {
+	margin-bottom: -10%;
+}
+
+#navbarDropdown img {
+	width: 10%;
+}
+
+.authorization .role {
+	margin-left: 16px;
+	color: #343a40;
 }
 
 #nav .nav-link {
