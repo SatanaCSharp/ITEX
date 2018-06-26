@@ -29,7 +29,7 @@
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
             @else
-                <li id="dropdown" class="nav-item dropdown">
+                <li id="dropdown" class="nav-item dropdown row">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {!! Html::image('images/user-image.png') !!}
                         {{ Auth::user()->name }} {{ Auth::user()->last_name }}<span class="caret"></span>
