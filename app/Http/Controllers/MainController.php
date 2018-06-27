@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function index()
-    {
-        return view('publicPart.homePage.index');
+    {   $company=["Platika","Epam","Ciklum","RIA","Sharashka"];
+        return view('publicPart.homePage.index')->with(['company' => $company]);
     }
 }

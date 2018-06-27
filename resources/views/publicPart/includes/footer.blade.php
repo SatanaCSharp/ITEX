@@ -25,7 +25,7 @@
             <div class="col-md-4">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link navigation " href="#"><h5 >HOME</h5></a>
+                        <a class="nav-link" href="#"><h5 class="navigation">HOME</h5></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="#"><h5  class="navigation">COMPANIES</h5></a>

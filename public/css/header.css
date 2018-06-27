@@ -21,7 +21,6 @@
 }
 
 .nav-item:hover {
-	text-decoration: underline;
 	position:relative;
     top:-2px;
 }
