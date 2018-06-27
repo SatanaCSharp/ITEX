@@ -8,7 +8,7 @@
     <h1>Create New Report</h1>
     <hr/>
 
-    {!! Form::open(['url' => 'admin/events/'.$idEvent.'/reports', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['url' => 'admin/events/'.$idEvent.'/reports', 'class' => 'form-horizontal','enctype' => 'multipart/form-data', 'files' => true,]) !!}
 
     <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">
         {!! Form::label('title', 'Title: ', ['class' => 'col-sm-3 control-label']) !!}
@@ -37,8 +37,8 @@
     <div class="form-group {{ $errors->has('images') ? 'has-error' : ''}}">
         {!! Form::label('images', 'Images: ', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-6">
-            {!! Form::text('images', null, ['class' => 'form-control', 'required' => 'required']) !!}
-            {!! $errors->first('images', '<p class="help-block">:message</p>') !!}
+            {!! Form::file('images[]', ['class' => 'form-control', 'multiple'=>'multiple', 'required' => 'required']) !!}
+            {!! $errors->first('image', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
     <div class="form-group {{ $errors->has('event_id') ? 'has-error' : ''}}">
