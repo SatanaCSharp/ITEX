@@ -1,4 +1,4 @@
-h5 , i{
+h5 {
     color:white;
 }
 
@@ -21,6 +21,14 @@ h5 , i{
     list-style: none;
     display: inline-block;
     margin-right: 10px;
+}
+
+.social i {
+    color: white;
+}
+
+.social i:hover{
+    color: rgb(230, 247, 134);
 }
 
 .myIntita{
