@@ -12,7 +12,7 @@ class CompaniesController extends Controller
 //        $itemsPerPage = 15;
 //        $companies = Company::paginate($itemsPerPage);
 //
-//        return view('backEnd.admin.companies.index', compact('companies'));
+        return view('publicPart.manager.companies.index');
     }
 
     /**
