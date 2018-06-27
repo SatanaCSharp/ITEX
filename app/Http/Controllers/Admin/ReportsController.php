@@ -22,9 +22,9 @@ class ReportsController extends Controller
     {
 
         $itemsPerPage = 15;
-        $reports = Report::where('event_id',$idEvent)->paginate($itemsPerPage);
+        $reports = Report::where('event_id', $idEvent)->paginate($itemsPerPage);
 
-        return view('backEnd.admin.reports.index', ['reports'=>$reports,'idEvent'=>$idEvent]);
+        return view('backEnd.admin.reports.index', ['reports' => $reports, 'idEvent' => $idEvent]);
     }
 
     /**
@@ -35,7 +35,7 @@ class ReportsController extends Controller
     public function create($idEvent)
     {
         $eventId = $idEvent;
-        return view('backEnd.admin.reports.create',['idEvent'=>$eventId]);
+        return view('backEnd.admin.reports.create', ['idEvent' => $eventId]);
     }
 
     /**
@@ -43,33 +43,45 @@ class ReportsController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request,$idEvent)
+    public function store(Request $request, $idEvent)
     {
 
         $this->validate($request, [
-            'title'         => 'required',
-            'description'   => 'required',
+            'title' => 'required',
+            'description' => 'required',
             'date_creation' => 'required',
-            'images'        => 'required',
-            'event_id'      => 'required',
-            ]);
+            'images' => 'required',
+            'event_id' => 'required',
+        ]);
 
-        Report::create($request->all());
+        if ($request->hasfile('images')) {
+            foreach ($request->file('images') as $image) {
+                $report = new Report();
+                $report->title = $request['title'];
+                $report->description = $request['description'];
+                $report->date_creation = $request['date_creation'];
+                $name = $image->getClientOriginalName();
+                $image->move(public_path() . '/images/reports/idEvent-' . $idEvent, $name);
+                $report->images = $name;
+                $report->event_id = $request['event_id'];
+                $report->save();
+            }
+        }
 
         Session::flash('message', 'Report added!');
         Session::flash('status', 'success');
 
-        return redirect('admin/events/'.$idEvent.'/reports');
+        return redirect('admin/events/' . $idEvent . '/reports');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
-    public function show($idEvent,$id)
+    public function show($idEvent, $id)
     {
 
         $report = Report::findOrFail($id);
@@ -80,7 +92,7 @@ class ReportsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -89,25 +101,25 @@ class ReportsController extends Controller
         $eventId = $id;
         $report = Report::findOrFail($id);
 
-        return view('backEnd.admin.reports.edit',['report'=>$report,'idEvent'=>$eventId]);
+        return view('backEnd.admin.reports.edit', ['report' => $report, 'idEvent' => $eventId]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
-    public function update($idEvent,$id, Request $request)
+    public function update($idEvent, $id, Request $request)
     {
 
         $this->validate($request, [
-            'title'         => 'required',
-            'description'   => 'required',
+            'title' => 'required',
+            'description' => 'required',
             'date_creation' => 'required',
-            'images'        => 'required',
-            'event_id'      => 'required', ]);
+            'images' => 'required',
+            'event_id' => 'required',]);
 
         $report = Report::findOrFail($id);
         $report->update($request->all());
@@ -115,13 +127,13 @@ class ReportsController extends Controller
         Session::flash('message', 'Report updated!');
         Session::flash('status', 'success');
 
-        return redirect('admin/events/'.$idEvent.'/reports');
+        return redirect('admin/events/' . $idEvent . '/reports');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -134,7 +146,7 @@ class ReportsController extends Controller
         Session::flash('message', 'Report deleted!');
         Session::flash('status', 'success');
 
-        return redirect('admin/events/'.$idEvent.'/reports');
+        return redirect('admin/events/' . $idEvent . '/reports');
     }
 
 }
