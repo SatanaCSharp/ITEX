@@ -8,12 +8,12 @@
     <h1>Create New Company</h1>
     <hr/>
 
-    {!! Form::open(['url' => 'admin/companies', 'class' => 'form-horizontal']) !!}
+    {!! Form::open(['url' => 'admin/companies', 'enctype' => 'multipart/form-data', 'files' => true, 'class' => 'form-horizontal']) !!}
 
     <div class="form-group {{ $errors->has('logo') ? 'has-error' : ''}}">
         {!! Form::label('logo', 'Logo: ', ['class' => 'col-sm-3 control-label']) !!}
         <div class="col-sm-6">
-            {!! Form::text('logo', null, ['class' => 'form-control']) !!}
+            {!! Form::file('logo', null, ['class' => 'form-control']) !!}
             {!! $errors->first('logo', '<p class="help-block">:message</p>') !!}
         </div>
     </div>

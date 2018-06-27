@@ -45,6 +45,12 @@ class CompaniesController extends Controller
     {
         $this->validate($request, ['title' => 'required', 'description' => 'required', 'contacts' => 'required', 'location' => 'required', ]);
 
+        if($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $companyName = $request->title;
+            $filename = $file->getClientOriginalName();
+            $file->move(public_path() . '/images/company/logos/' . $companyName . '/', $filename);
+        }
         Company::create($request->all());
 
         Session::flash('message', 'Company added!');
@@ -52,6 +58,7 @@ class CompaniesController extends Controller
 
         return redirect('admin/companies');
     }
+
 
     /**
      * Display the specified resource.
