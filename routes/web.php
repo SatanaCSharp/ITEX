@@ -14,11 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/', 'MainController@index');
 Route::group(['middleware' => ['auth','admin'],'prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
         Route::resource('/companies', 'CompaniesController');
@@ -35,4 +35,7 @@ Route::group(['middleware' => ['auth','manager'],'prefix' => 'manager', 'namespa
     Route::resource('/companies', 'CompaniesController');
 });
 
-Route::get('/', 'MainController@index');
+Route::group(['middleware' => ['auth','user'],'prefix' => 'user', 'namespace' => 'User'], function () {
+//    Route::resource('/companies', 'CompaniesController');
+});
+
