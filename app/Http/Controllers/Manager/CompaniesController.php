@@ -4,14 +4,16 @@ namespace App\Http\Controllers\Manager;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Company;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CompaniesController extends Controller
 {
     public function index()
     {
 //        $itemsPerPage = 15;
-//        $companies = Company::paginate($itemsPerPage);
-//
+// $events = Event::where('company_id', $idCompnay)->paginate($itemsPerPage);
         return view('publicPart.manager.companies.index');
     }
 
@@ -22,7 +24,9 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        return view('publicPart.manager.companies.create');
+        $userId = Auth::user()->id;
+        $userName = Auth::user()->name;
+        return view('publicPart.manager.companies.create',['userId'=>$userId,'userName'=>$userName]);
     }
 
     /**
@@ -32,7 +36,14 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['title' => 'required', 'description' => 'required', 'contacts' => 'required', 'location' => 'required', ]);
+//        dd($request);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'contacts' => 'required',
+            'location' => 'required',
+            ]);
 
         if($request->hasFile('logo')) {
             $file = $request->file('logo');
@@ -40,6 +51,7 @@ class CompaniesController extends Controller
             $filename = $file->getClientOriginalName();
             $file->move(public_path() . '/images/company/logos/' . $companyName . '/', $filename);
         }
+
         Company::create($request->all());
 
         Session::flash('message', 'Company added!');
