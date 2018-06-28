@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name','last_name', 'email', 'password', 'role',
+        'name', 'last_name', 'email', 'password', 'role',
     ];
 
     /**
@@ -47,16 +47,26 @@ class User extends Authenticatable
         return false;
     }
 
-    public function companies()
-{
-    return $this->hasOne('App\Company');
-}
+    public function isUser()
+    {
+        if (isset($this->role)) {
+            return $this->role == User::USER;
+        }
+        return false;
+    }
 
-    public function partisipants(){
+    public function companies()
+    {
+        return $this->hasOne('App\Company');
+    }
+
+    public function partisipants()
+    {
         return $this->hasMany('App\Partisipant');
     }
 
-    public function comments(){
+    public function comments()
+    {
         return $this->hasMany('App\Comment');
     }
 
