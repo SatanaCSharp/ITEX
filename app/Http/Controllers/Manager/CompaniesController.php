@@ -32,14 +32,20 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-//        $this->validate($request, ['title' => 'required', 'description' => 'required', 'contacts' => 'required', 'location' => 'required', ]);
-//
-//        Company::create($request->all());
-//
-//        Session::flash('message', 'Company added!');
-//        Session::flash('status', 'success');
-//
-//        return redirect('admin/companies');
+        $this->validate($request, ['title' => 'required', 'description' => 'required', 'contacts' => 'required', 'location' => 'required', ]);
+
+        if($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $companyName = $request->title;
+            $filename = $file->getClientOriginalName();
+            $file->move(public_path() . '/images/company/logos/' . $companyName . '/', $filename);
+        }
+        Company::create($request->all());
+
+        Session::flash('message', 'Company added!');
+        Session::flash('status', 'success');
+
+        return redirect('manager/companies');
     }
 
     /**
