@@ -50,8 +50,6 @@ main{
 .partic2{
     color: white;
     background-color: rgb(3, 20, 77);
-    margin-left: 0;
-    margin-top: 116%;
     font-size: 20px;
 }
 
@@ -59,8 +57,16 @@ main{
     font-size: 20px;
     color: white;
     background-color: rgb(3, 20, 77);
-    margin-left: 72%;
-    margin-top: 16%;
+}
+
+.myBtn li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.myBtn2{
+    margin-top: 190px;
 }
 
 .review_comp:hover{
@@ -82,16 +88,13 @@ main{
     .partic2{
         color: white;
         background-color: rgb(3, 20, 77);
-        margin-left: 0;
-        margin-top: 8%;
         font-size: 20px;
     }
     .review_comp{
         margin-left: 160px;
     }
 
-    .report{
-        margin-left:130px;
-        margin-top: -22%;
-    }
+   .myBtn2{
+       margin-top: 20px;
+   }
 }

@@ -11,7 +11,7 @@
               12
         </div>
        </div>
-       <div class="col-md-7 info_card">
+       <div class="col-md-6 info_card">
         <ul class="nav flex-column desc_comp" >
          <li class="nav-item ">
           <span class="card_text"> {{ $company}} 27.03.18 23:00</span>
@@ -24,17 +24,17 @@
          </li>
         </ul>
        </div>
-       <div class="col-md-2 info_card2">
+       <div class="col-md-3 info_card2">
         <ul class="nav flex-column">
          <li>
           <a href="#" class="review_comp"><i class="far fa-eye fa-2x"></i></a>
          </li>
-         <li>
-          <button type="button" class="btn btn-light partic2">Participate</button>
-         </li>
-         <li>
-          <button type="button" class="btn btn-light report">Reporte</button>
-         </li>
+          <li class="myBtn2">
+             <ul class="myBtn">
+              <li><button type="button" class="btn btn-light partic2">Participate</button></li>
+              <li><button type="button" class="btn btn-light report">Reporte</button></li>
+             </ul>
+          </li>
         </ul>
        </div>
       </div>
