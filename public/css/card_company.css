@@ -50,11 +50,11 @@ main{
 .partic2{
     color: white;
     background-color: rgb(3, 20, 77);
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .report{
-    font-size: 20px;
+    font-size: 16px;
     color: white;
     background-color: rgb(3, 20, 77);
 }
@@ -66,35 +66,34 @@ main{
 }
 
 .myBtn2{
-    margin-top: 190px;
+    margin-top: 161px;
 }
 
 .review_comp:hover{
     color: rgb(243, 243, 116);
 }
-.elem_last{
-    margin-top: 52px;
-}
-.card_text{
-    font-size: 29px;
+
+.card_title{
+    font-size: 24px;
     color:#081018;
 }
 
 .desc_exc{
-    font-size: 19px;
+    font-size: 18px;
 }
 
 @media (max-width: 750px) {
     .partic2{
-        color: white;
-        background-color: rgb(3, 20, 77);
-        font-size: 20px;
+        font-size: 14px;
     }
     .review_comp{
-        margin-left: 160px;
+        margin-left:50px;
     }
 
    .myBtn2{
        margin-top: 20px;
+   }
+   .report{
+       font-size: 14px;
    }
 }

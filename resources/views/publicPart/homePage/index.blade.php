@@ -14,13 +14,13 @@
        <div class="col-md-6 info_card">
         <ul class="nav flex-column desc_comp" >
          <li class="nav-item ">
-          <span class="card_text"> {{ $company}} 27.03.18 23:00</span>
+          <span class="card_title"> {{ $company}} 27.03.18 23:00</span>
          </li>
          <li class="nav-item">
             <p class="desc_exc"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur debitis, exercitationem labore natus nemo quis ut velit voluptatum! Excepturi in nobis optio pariatur perferendis provident quisquam quod. Cum, minima, nemo.</p>
          </li>
-         <li class="nav-item elem_last">
-              <span class="card_text "> Vinnitsa Keletska str. 27a</span>
+         <li class="nav-item ">
+              <p class="desc_exc ">Vinnitsa Keletska str. 27a</p>
          </li>
         </ul>
        </div>
