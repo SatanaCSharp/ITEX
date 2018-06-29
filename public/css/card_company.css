@@ -6,8 +6,11 @@ main{
 
 .card_company{
     margin: 50px auto ;
-    width: 82%;
-    background-color:#FCFBFA;
+    width: 70%;
+    background-color:white;
+    border-bottom: 1px solid #D0D0D0;
+    border-top: 1px solid #D0D0D0;
+    border-radius: 0;
 }
 
 .logo_catd{
@@ -25,29 +28,56 @@ main{
     margin-bottom: 25px;
 }
 
-span ,i{
-    font-weight: normal;
-    color:black;
-}
-
-.partic{
-    margin-top: 40px;
-    font-size: 20px;
+.participents{
+    width: 40px;
+    height: 40px;
+    background-color: #D0D0D0;
+    border-radius: 50%;
+    font-size: 30px;
+    margin-top: -18px;
+    margin-left: 110px;
 }
 
 .review_comp{
-    margin-left: 120px;
-    color:black;
+    margin-left: 160px;
+    color:#4f27d8;
 }
 
 .partic2{
     color: white;
     background-color: rgb(3, 20, 77);
     margin-left: 40%;
-    margin-top: 150px;
+    margin-top: 150%;
     font-size: 20px;
 }
 
 .review_comp:hover{
     color: rgb(243, 243, 116);
+}
+
+.card_text{
+    font-size: 29px;
+    color:#081018;
+}
+
+.desc_exc{
+    font-size: 19px;
+}
+
+.card_date{
+    margin-top: -17px;
+}
+
+
+@media (max-width: 750px) {
+    .partic2{
+        color: white;
+        background-color: rgb(3, 20, 77);
+        margin-left: 0;
+        margin-top: 8%;
+        font-size: 20px;
+    }
+    .review_comp{
+        margin-left: 160px;
+    }
 }
