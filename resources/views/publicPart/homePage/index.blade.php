@@ -14,13 +14,13 @@
        <div class="col-md-7 info_card">
         <ul class="nav flex-column desc_comp" >
          <li class="nav-item ">
-          <span class="card_text"> {{ $company}}</span>
+          <span class="card_text"> {{ $company}} 27.03.18 23:00</span>
          </li>
          <li class="nav-item">
-            <p class="desc_exc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur debitis, exercitationem labore natus nemo quis ut velit voluptatum! Excepturi in nobis optio pariatur perferendis provident quisquam quod. Cum, minima, nemo.</p>
+            <p class="desc_exc"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur debitis, exercitationem labore natus nemo quis ut velit voluptatum! Excepturi in nobis optio pariatur perferendis provident quisquam quod. Cum, minima, nemo.</p>
          </li>
-         <li class="nav-item">
-              <span class="card_text"> Vinnitsa Keletska str. 27a</span>
+         <li class="nav-item elem_last">
+              <span class="card_text "> Vinnitsa Keletska str. 27a</span>
          </li>
         </ul>
        </div>
@@ -30,10 +30,10 @@
           <a href="#" class="review_comp"><i class="far fa-eye fa-2x"></i></a>
          </li>
          <li>
-            <p class="card_date">27.06.18  12:45</p>
+          <button type="button" class="btn btn-light partic2">Participate</button>
          </li>
          <li>
-          <button type="button" class="btn btn-light partic2">Participate</button>
+          <button type="button" class="btn btn-light report">Reporte</button>
          </li>
         </ul>
        </div>
