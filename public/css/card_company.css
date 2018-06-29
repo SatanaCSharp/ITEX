@@ -6,8 +6,10 @@ main{
 
 .card_company{
     margin: 50px auto ;
-    width: 82%;
-    background-color:#FCFBFA;
+    width: 80%;
+    background-color:white;
+    border-bottom: 1px solid #D0D0D0;
+    border-radius: 0;
 }
 
 .logo_catd{
@@ -15,39 +17,83 @@ main{
 }
 
 .imgLogo{
-    width: 63%;
-    height: 63%;
+    width: 73%;
+    height: 73%;
     border: 1px solid black;
     border-radius: 50%;
+    background: white;
 }
 
 .desc_comp li{
     margin-bottom: 25px;
 }
 
-span ,i{
-    font-weight: normal;
-    color:black;
-}
 
-.partic{
-    margin-top: 40px;
-    font-size: 20px;
+
+.participents{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    font-size: 30px;
+    margin-top: -36px;
+    margin-left: 142px;
+    position: absolute;
 }
 
 .review_comp{
-    margin-left: 120px;
-    color:black;
+    margin-left: 160px;
+    color:#4f27d8;
 }
 
 .partic2{
     color: white;
     background-color: rgb(3, 20, 77);
-    margin-left: 40%;
-    margin-top: 150px;
-    font-size: 20px;
+    font-size: 16px;
+}
+
+.report{
+    font-size: 16px;
+    color: white;
+    background-color: rgb(3, 20, 77);
+}
+
+.myBtn li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.myBtn2{
+    margin-top: 161px;
 }
 
 .review_comp:hover{
     color: rgb(243, 243, 116);
+}
+
+.card_title{
+    font-size: 24px;
+    color:#081018;
+}
+
+.desc_exc{
+    font-size: 18px;
+}
+
+@media (max-width: 750px) {
+    .partic2{
+        font-size: 14px;
+    }
+    .review_comp{
+        margin-left:50px;
+    }
+
+   .myBtn2{
+       margin-top: 20px;
+   }
+   .report{
+       font-size: 14px;
+   }
 }

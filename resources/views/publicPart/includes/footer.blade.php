@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-    <hr>
+    <hr  class="hr">
     <div class="footer-copyright py-3 text-center">
         <p>© 2018 Copyright : <a class="myIntita" href="https://intita.com/" >@ITEX.INTITA </a></p>
     </div>
