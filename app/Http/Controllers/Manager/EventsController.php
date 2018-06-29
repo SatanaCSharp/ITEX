@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers\Manager;
 
+use App\Company;
+use App\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class EventsController extends Controller
 {
-    public function index()
+    public function index($idCompany)
     {
-//        $itemsPerPage = 15;
-//        $companies = Company::paginate($itemsPerPage);
-//
-        return view('publicPart.manager.events.index');
+        $id = $idCompany;
+        $itemsPerPage = 5;
+        $company = Company::where('id',$idCompany)->first();
+        $events = Event::where('company_id',$idCompany)->paginate($itemsPerPage);
+
+        return view('publicPart.manager.events.index',['events'=>$events,'companyId'=>$id,'company'=>$company]);
     }
 
     /**
@@ -20,9 +25,10 @@ class EventsController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($idCompany)
     {
-        return view('publicPart.manager.events.create');
+        $id = $idCompany;
+        return view('publicPart.manager.events.create',['companyId'=>$id]);
     }
 
     /**
@@ -30,22 +36,35 @@ class EventsController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $idCompany)
     {
-//        $this->validate($request, ['title' => 'required', 'description' => 'required', 'contacts' => 'required', 'location' => 'required', ]);
-//
-//        Company::create($request->all());
-//
-//        Session::flash('message', 'Company added!');
-//        Session::flash('status', 'success');
-//
-//        return redirect('admin/companies');
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'date' => 'required',
+            'state' => 'required',
+            'duration' => 'required',
+        ]);
+
+        $event = new Event();
+        $event->title = $request['title'];
+        $event->description = $request['description'];
+        $event->date = $request['date'];
+        $event->state = $request['state'];
+        $event->duration = $request['duration'];
+        $event->company_id = $idCompany;
+        $event->save();
+
+        Session::flash('message', 'Company added!');
+        Session::flash('status', 'success');
+
+        return redirect('manager/companies/' . $idCompany . '/events');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -59,7 +78,7 @@ class EventsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -73,7 +92,7 @@ class EventsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */

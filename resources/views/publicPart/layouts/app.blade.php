@@ -12,6 +12,6 @@
 @include('publicPart.includes.header')
 @yield('content')
 @include('publicPart.includes.footer')
-
+@include('publicPart.includes.scripts')
 </body>
 </html>
