@@ -14,11 +14,11 @@
 }
 
 .card {
-	width: 230px;
-	height: 230px;
+	width: 200px;
+	height: 200px;
 	overflow:hidden;
     border: none;
-    margin-left: 10%;
+    margin-left: 13%;
 }
 
 .avatar-company {
@@ -27,13 +27,19 @@
 }
 
 #add {
-	width: 48px;
-	height: 38px;
+	width: 35px;
+	height: 29px;
 	background-color: #202349;
 	border: none;
 	display: block;
-	margin: 70px 0 0 8%;
+	margin: 70px 0 0 95%;
 	padding: 4px;
+}
+
+.choose-file {
+    opacity: 0;
+    margin: -18px;
+    font-size: 8px;
 }
 
 #add img {
@@ -43,14 +49,13 @@
 
 .form-group  {
 	padding: 1%;
-	margin-left: 8%;
+	margin-left: 13%;
 	width: 90%;
 }
 
 .lable-text {
 	color: #666666;
 	font-size: 120%;
-    margin-left: -5px;
 }
 
 .form-control {

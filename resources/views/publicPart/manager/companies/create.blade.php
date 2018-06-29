@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- create company -->
-    <section class="company" >
+    <section class="company col-md-10">
         <div class="title-text">
        <span>
          Creation of a company
@@ -15,10 +15,11 @@
 
             {!! Form::open(['url' => 'manager/companies', 'enctype' => 'multipart/form-data', 'files' => true]) !!}
             <div  class="card-body">
-                <a href="#" id="add" class="btn btn-primary col-md-2">
+                <a href="#" id="add" class="btn btn-primary">
                     {!! Html::image('images/add.png') !!}
-                    {!! Form::file('logo', null, ['id' => 'add', 'class' => 'form-control']) !!}
+                <div class="choose-file">{!! Form::file('logo', null, ['id' => 'add', 'class' => 'form-control']) !!}
                     {!! $errors->first('logo', '<p class="help-block">:message</p>') !!}
+                </div>
                 </a>
             </div>
         </div>
