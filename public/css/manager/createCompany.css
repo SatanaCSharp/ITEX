@@ -1,9 +1,16 @@
-.title-text {
-	margin: 3% 0 2% 0;
-	font-size: 270%;
-	text-align: center;
-	color:  #666666;
-	/*font-weight: bold;*/
+.company {
+	margin: auto;
+}
+
+.title-text  {
+	    margin: 3% 0 2% 0;
+    	font-size: 180%;
+    	text-align: center;
+
+}
+
+.company .title-text span {
+        color: #666666;
 }
 
 .card {
@@ -40,15 +47,24 @@
 	width: 90%;
 }
 
-.col-md-3 {
+.lable-text {
 	color: #666666;
-	font-size: 210%;
-	margin-left: -5px;
+	font-size: 120%;
+    margin-left: -5px;
 }
 
 .form-control {
 	background-color: #fcfbfa;
 	margin-left: 38px;
+}
+
+.form-group .form-control {
+	box-shadow: none;
+}
+
+.input-user {
+    margin-left: 38px;
+    background-color: #fcfbfa;
 }
 
 #btn-create {

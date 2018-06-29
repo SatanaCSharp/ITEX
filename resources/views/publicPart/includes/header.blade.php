@@ -1,12 +1,13 @@
 <!-- Header -->
 <section class="header">
-    <div class="logo">
-        {!! Html::image('images/logo.png') !!}
-    </div>
+
 
     <!-- Navbar in header -->
     <div id="nav" class="navbare">
-        <ul class="nav nav-pills">
+        <div class="logo">
+            {!! Html::image('images/logo.png') !!}
+        </div>
+        <ul class="nav nav-pills menu">
             <li class="nav-item">
                 <a class="nav-link active" href="#">Home</a>
             </li>

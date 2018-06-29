@@ -3,16 +3,19 @@
 }
 
 .logo img {
-	margin: 2% 0 2% 0;
-	width: 10%;
+	width: 33%;
 }
 
 #nav {
 	display: flex;
-	padding: 2% 0% 2% 5%;
+	padding: 2% 0 2% 0;
 	height: 100%;
-	justify-content:space-between;
+	/*justify-content:space-between;*/
 	background-color: #fcfbfa;
+}
+
+.menu {
+	width: 53%;
 }
 
 #nav .nav-pills .nav-item .nav-link {
@@ -43,7 +46,7 @@
 }
 
 .authorization .role {
-	margin-left: 16px;
+	margin: -17% 0 0 77%;
 	color: #343a40;
 }
 
