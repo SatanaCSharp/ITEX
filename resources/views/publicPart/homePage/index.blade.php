@@ -32,7 +32,7 @@
           <li class="myBtn2">
              <ul class="myBtn">
               <li><button type="button" class="btn btn-light partic2">Participate</button></li>
-              <li><button type="button" class="btn btn-light report">Reporte</button></li>
+              <li><button type="button" class="btn btn-light report">Report</button></li>
              </ul>
           </li>
         </ul>
