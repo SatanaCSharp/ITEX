@@ -12,9 +12,9 @@ class CompaniesController extends Controller
 {
     public function index()
     {
-//        $itemsPerPage = 15;
-// $events = Event::where('company_id', $idCompnay)->paginate($itemsPerPage);
-        return view('publicPart.manager.companies.index');
+        $userId = Auth::user()->id;
+        $company = Company::where('user_id', $userId)->first();
+        return view('publicPart.manager.companies.index',['company'=>$company]);
     }
 
     /**
@@ -24,9 +24,7 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        $userId = Auth::user()->id;
-        $userName = Auth::user()->name;
-        return view('publicPart.manager.companies.create',['userId'=>$userId,'userName'=>$userName]);
+        return view('publicPart.manager.companies.create');
     }
 
     /**
@@ -36,24 +34,30 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request);
-
         $this->validate($request, [
             'title' => 'required',
+            'logo' => 'required',
             'description' => 'required',
             'contacts' => 'required',
             'location' => 'required',
-            ]);
+        ]);
 
-        if($request->hasFile('logo')) {
+
+        if ($request->hasFile('logo')) {
             $file = $request->file('logo');
             $companyName = $request->title;
             $filename = $file->getClientOriginalName();
             $file->move(public_path() . '/images/company/logos/' . $companyName . '/', $filename);
         }
 
-        Company::create($request->all());
-
+        $company = new Company();
+        $company->logo = $filename;
+        $company->title = $request['title'];
+        $company->description = $request['description'];
+        $company->contacts = $request['contacts'];
+        $company->location = $request['location'];
+        $company->user_id = Auth::user()->id;
+        $company->save();
         Session::flash('message', 'Company added!');
         Session::flash('status', 'success');
 
@@ -63,7 +67,7 @@ class CompaniesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -77,7 +81,7 @@ class CompaniesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -91,7 +95,7 @@ class CompaniesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return Response
      */

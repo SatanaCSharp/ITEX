@@ -1,7 +1,7 @@
 @extends('publicPart.layouts.app')
 
 @section('content')
-    <!-- create company -->
+
     <section class="company" >
         <div class="title-text">
        <span>
@@ -17,7 +17,7 @@
             <div  class="card-body">
                 <a href="#" id="add" class="btn btn-primary col-md-2">
                     {!! Html::image('images/add.png') !!}
-                    {!! Form::file('logo', null, ['id' => 'add', 'class' => 'form-control']) !!}
+                    {!! Form::file('logo', null, ['id' => 'add', 'class' => 'form-control', 'required' => 'required']) !!}
                     {!! $errors->first('logo', '<p class="help-block">:message</p>') !!}
                 </a>
             </div>
@@ -47,20 +47,8 @@
             {!! $errors->first('location', '<p class="help-block">:message</p>') !!}
         </div>
         <div class="form-group row">
-            <span class="col-md-3 lable-text ">User</span>
-
-            <div class="col-md-6 input-user">{{$userName}}</div>
-        </div>
-        {{--<div class="form-group row">--}}
-            {{--<span class="col-md-3 lable-text ">UserId</span>--}}
-            {{--{!! Form::number('user_id', $userId, ['class' => 'form-control col-md-6']) !!}--}}
-            {{--{!! $errors->first('user_id', '<p class="help-block">:message</p>') !!}--}}
-        {{--</div>--}}
-
-        <div class="form-group row">
             <span class="col-md-3 lable-text "></span>
             {!! Form::submit('CREATE', ['id'=>'btn-create', 'class' => 'btn btn-primary col-md-6']) !!}
-            {{--<button id="btn-create" type="button" class="btn btn-primary col-md-6">CREATE</button>--}}
         </div>
     </section>
 

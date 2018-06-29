@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth','admin'],'prefix' => 'admin', 'namespace' 
 
 Route::group(['middleware' => ['auth','manager'],'prefix' => 'manager', 'namespace' => 'Manager'], function () {
     Route::resource('/companies', 'CompaniesController');
-    Route::resource('/events', 'EventsController');
+    Route::resource('/companies.events', 'EventsController');
 });
 
 Route::group(['middleware' => ['auth','user'],'prefix' => 'user', 'namespace' => 'User'], function () {
