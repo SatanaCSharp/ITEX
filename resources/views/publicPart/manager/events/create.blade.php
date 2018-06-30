@@ -28,6 +28,7 @@
                        data-toggle="datetimepicker" data-target="#datetimepicker5" required/>
             </div>
         </div>
+
         </div>
         <div class="form-group row">
             <span class="col-md-3 lable-text">State of excursion</span>
