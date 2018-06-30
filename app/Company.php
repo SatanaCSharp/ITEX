@@ -25,6 +25,7 @@ class Company extends Model
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
+
     public function users()
     {
         return $this->belongsTo('App\User','user_id');
