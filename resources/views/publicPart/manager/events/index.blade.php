@@ -18,7 +18,12 @@
         </h3>
 
         <h3>{{$event->duration}} h</h3>
+        @if($event->state == 0)
+            <a href="{{url('/manager/events/'.$event->id.'/reports')}}">Report</a>
+            <a href="{{url('/manager/events/'.$event->id.'/reports/create')}}">Create report</a>
+        @endif
     @empty
         <h3>There no excursions</h3>
     @endforelse
+
 @endsection
