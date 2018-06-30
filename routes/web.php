@@ -38,5 +38,9 @@ Route::group(['middleware' => ['auth','manager'],'prefix' => 'manager', 'namespa
 
 Route::group(['middleware' => ['auth','user'],'prefix' => 'user', 'namespace' => 'User'], function () {
 //    Route::resource('/companies', 'CompaniesController');
+
 });
 
+Route::get('/user/events', 'User\EventsController@index');
+Route::get('/user/companies', 'User\CompaniesController@index');
+Route::get('/user/contacts', 'User\ContactsController@index');
