@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Company;
+use App\Event;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class MainController extends Controller
+class EventsController extends Controller
 {
     public function index()
     {

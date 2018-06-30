@@ -7,13 +7,13 @@
         </div>
         <ul class="nav nav-pills menu">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link active" href="{{url('/user/events')}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Companies</a>
+                <a class="nav-link" href="{{url('/user/companies')}}">Companies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contacts</a>
+                <a class="nav-link" href="{{url('/user/contacts')}}">Contacts</a>
             </li>
         </ul>
         <div class="nav authorization">

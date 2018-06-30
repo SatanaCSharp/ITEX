@@ -25,6 +25,7 @@ class Event extends Model
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
+
     public function companies()
     {
         return $this->belongsTo('App\Company','company_id');
