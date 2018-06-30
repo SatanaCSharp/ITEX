@@ -39,7 +39,7 @@
                                 <div class="col-md-6">
                                     <input id="email" class="auth-registr inp-fild" type="email"
                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('email') }}" placeholder="Enter your e-mail"
+                                           name="email" value="{{ old('email') }}" placeholder="  Enter your e-mail"
                                            required>
 
                                     @if ($errors->has('email'))
@@ -56,7 +56,7 @@
                                 <div class="col-md-6">
                                     <input id="password" class="auth-registr inp-fild" type="password"
                                            class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                           name="password" placeholder="Enter password" required>
+                                           name="password" placeholder="   Enter password" required>
 
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
@@ -71,7 +71,7 @@
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" class="auth-registr inp-fild" type="password" class="form-control"
-                                           name="password_confirmation" placeholder="Enter password one more time "
+                                           name="password_confirmation" placeholder="  Enter password one more time "
                                            required>
                                 </div>
 

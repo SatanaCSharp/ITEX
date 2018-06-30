@@ -1,0 +1,54 @@
+.create_report {
+    margin: auto;
+}
+
+.lable-report {
+    color: #666666;
+    font-size: 114%;
+}
+
+.name-report {
+    width: 109%;
+    margin-left: 21px;
+}
+
+.description-text {
+    color: #666666;
+    font-size: 114%;
+}
+
+.report-description {
+    width: 109%;
+    margin-left: 21px;
+}
+
+.label-img {
+    color: #666666;
+    font-size: 114%;
+}
+
+.button-add {
+    margin-left: 38px;
+}
+
+#btn-add {
+    font-size: 10%;
+}
+
+.plus {
+    opacity: 0;
+    font-size: 16px;
+    width: 70%;
+    margin: -26px 0 0 -47px;
+}
+
+.add-images img {
+    width: 34px;
+}
+
+#button-create {
+    background-color: #202349;
+    border: none;
+    margin-left: 405px;
+    width: 455px;
+}

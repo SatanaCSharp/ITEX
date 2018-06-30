@@ -21,15 +21,15 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/auth/login.css') }}" rel="stylesheet">
     <link href="{{ asset('css/auth/registration.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/logo_in_authorization.css') }}" rel="stylesheet">
 
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+    <nav class="navbar navbar-expand-md navbar-light navbar-laravel header">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+            <a class="navbar-brand logo" href="{{ url('/') }}">
+                {!! Html::image('images/logo.png') !!}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -77,7 +77,7 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <main class="py-4 main-bloc">
         @yield('content')
     </main>
 </div>

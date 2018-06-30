@@ -1,0 +1,13 @@
+.logo img {
+    width: 33%;
+    margin-left: 10%;
+}
+
+.header {
+    background-color: #fcfbfa;
+    height: 90px;
+}
+
+.main-bloc {
+    background-color: white;
+}
