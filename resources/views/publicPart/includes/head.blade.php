@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="{{ asset('/css/header.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('/css/footer.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('/css/manager/createCompany.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('/css/manager/create_company.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('/css/card_company.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('/css/manager/create_event.css') }}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0/css/tempusdominus-bootstrap-4.min.css" />

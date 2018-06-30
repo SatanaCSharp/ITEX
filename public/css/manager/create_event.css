@@ -1,0 +1,25 @@
+.new-event {
+    margin: auto;
+}
+
+.title-text {
+    color: #666666;
+}
+
+#datetimepicker5 {
+    width: 460px;
+    margin-left: 5%;
+}
+
+.state {
+    margin-left: 20px;
+}
+
+.state select {
+    margin-left: 17%;
+    border-radius: 8%;
+    height: 37px;
+    background-color: #fcfbfa;
+    border-color: #ced4da;
+}
+

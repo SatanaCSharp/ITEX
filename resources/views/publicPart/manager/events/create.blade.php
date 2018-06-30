@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Create new event -->
-    <section class="new-event">
+    <section class="new-event col-md-10">
         <div class="title-text">
        <span>
          Create new event
@@ -31,7 +31,7 @@
         </div>
         <div class="form-group row">
             <span class="col-md-3 lable-text">State of excursion</span>
-            {!! Form::select('state', [ 1=>"In planing", 0 =>"Occurred"]) !!}
+            <div class="state"> {!! Form::select('state', [ 1=>"In planing", 0 =>"Occurred"]) !!} </div>
         </div>
 
         <div class="form-group row">
