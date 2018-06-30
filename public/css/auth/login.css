@@ -1,0 +1,50 @@
+.authorization-lable {
+    width: 30%;
+    font-size: 120%;
+    color: #666666;
+    margin: 3% 0 0 4%;
+}
+
+.block-login {
+    width: 500px;
+}
+
+.box-login {
+    margin: 25% 0 -23% 0;
+    color: #666666;
+    width: 200px;
+}
+
+.fog-passw {
+    width: 165px;
+    margin-top: 3%;
+}
+
+#btn-login {
+    box-shadow: none;
+   width: 155%;
+    background-color: #202349;
+    border-color: #ced4da;
+}
+
+.auth-logo {
+    background-color: #fcfbfa !important;
+    box-shadow: none;
+    width: 212%;
+    border: none;
+}
+
+
+
+.button-login {
+    margin: 0;
+}
+
+.log-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-block {
+
+}
