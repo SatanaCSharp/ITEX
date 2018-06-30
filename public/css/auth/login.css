@@ -1,6 +1,6 @@
 .authorization-lable {
     width: 30%;
-    font-size: 120%;
+    font-size: 150%;
     color: #666666;
     margin: 3% 0 0 4%;
 }
@@ -34,8 +34,6 @@
     border: none;
 }
 
-
-
 .button-login {
     margin: 0;
 }
@@ -43,8 +41,4 @@
 .log-menu {
     display: flex;
     justify-content: space-between;
-}
-
-.first-block {
-
 }

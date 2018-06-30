@@ -20,6 +20,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/auth/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/auth/registration.css') }}" rel="stylesheet">
+
 
 </head>
 <body>
