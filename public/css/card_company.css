@@ -96,6 +96,8 @@ main{
    .report{
        font-size: 14px;
    }
+
+
 }
 
 /*STYLES FOR MANAGER COMPANY CARD #############################################################################*/
@@ -131,4 +133,10 @@ main{
 
 .desc-list-company h2 {
     color: #717171;
+}
+
+.btn-event{
+    margin-top: 65%;
+    background: #202349;
+    border: none;
 }
