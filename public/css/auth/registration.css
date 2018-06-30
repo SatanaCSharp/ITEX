@@ -1,0 +1,30 @@
+.registration-lable {
+    width: 30%;
+    font-size: 150%;
+    color: #666666;
+    margin: 3% 0 0 4%;
+    }
+
+.auth-registr {
+    background-color: #fcfbfa !important;
+    box-shadow: none;
+    width: 212%;
+    border: none;
+}
+
+.inp-fild {
+    height: 34px;
+    border-radius: 3%;
+}
+
+#btn-register {
+    box-shadow: none;
+    width: 155%;
+    background-color: #202349;
+    border-color: #ced4da;
+}
+
+.box-registr {
+    margin: 2% 0 0% -111%;
+    color: #666666;
+}

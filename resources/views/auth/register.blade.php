@@ -3,24 +3,27 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                    <div class="registration-lable">
+                    <span>
+                        Registration
+                    </span>
+                    </div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                             @csrf
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right"></label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
-                                           class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                           class="form-control auth-registr{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                            name="name" value="{{ old('name') }}" placeholder="Enter first name" required
                                            autofocus>
                                     <label for="lastName" class="col-md-4 col-form-label text-md-right"></label>
-                                    <input id="lastName" type="text" class="form-control" name="lastName"
+                                    <input id="lastName" type="text" class="form-control auth-registr" name="lastName"
                                            value="{{ old('lastName') }}" placeholder="Enter last name" required>
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -31,10 +34,10 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right"></label>
+
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email"
+                                    <input id="email" class="auth-registr inp-fild" type="email"
                                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                            name="email" value="{{ old('email') }}" placeholder="Enter your e-mail"
                                            required>
@@ -48,11 +51,11 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right"></label>
+
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password"
-                                           class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                    <input id="password" class="auth-registr inp-fild" type="password"
+                                           class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
                                            name="password" placeholder="Enter password" required>
 
                                     @if ($errors->has('password'))
@@ -64,10 +67,10 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right"></label>
+
 
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
+                                    <input id="password-confirm" class="auth-registr inp-fild" type="password" class="form-control"
                                            name="password_confirmation" placeholder="Enter password one more time "
                                            required>
                                 </div>
@@ -76,7 +79,7 @@
                                     <br>
                                     <label for="manager-checkbox"
                                            class="col-md-2 col-form-label text-md-right"> </label>
-                                    <div class="manager-check-box">
+                                    <div class="manager-check-box box-registr">
                                         <input id="manager-checkbox" type="checkbox" name="role">
                                         <span class="description-check-box"> Register as a manager</span>
                                     </div>
@@ -84,9 +87,9 @@
                             </div>
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                <div class="col-md-8">
+                                    <button type="submit" id="btn-register" class="btn btn-primary">
+                                        {{ __('Regist') }}
                                     </button>
                                 </div>
                             </div>
