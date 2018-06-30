@@ -32,7 +32,7 @@
 	background-color: #202349;
 	border: none;
 	display: block;
-	margin: 70px 0 0 95%;
+	margin: 70px 0 0 54px;
 	padding: 4px;
 }
 
@@ -45,6 +45,7 @@
 #add img {
 	width: 45%;
 	height: 60%;
+	margin-bottom: 7px;
 }
 
 .form-group  {
@@ -75,4 +76,5 @@
 #btn-create {
 	background-color: #202349;
 	margin-left: 38px;
+	border-color: #ced4da;
 }
