@@ -97,3 +97,38 @@ main{
        font-size: 14px;
    }
 }
+
+/*STYLES FOR MANAGER COMPANY CARD #############################################################################*/
+.company-logo-manager img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.create-event-manager{
+    margin-top: 15%;
+}
+
+.create-event-manager .btn{
+    background: #202349;
+    border: none;
+}
+
+.desc-list-company li {
+    margin-bottom: 14px;
+}
+
+.desc-list-company p{
+    font-size: 23px;
+    color: #717171;
+}
+
+.desc-list-company i{
+    font-size: 30px;
+    color: black;
+    margin-right: 15px;
+}
+
+.desc-list-company h2 {
+    color: #717171;
+}
