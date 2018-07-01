@@ -37,6 +37,7 @@ class RegisterController extends Controller
             return $this->registered($request, $user)
                 ?: redirect('manager/companies/create');
         }else{
+            $request['role'] = User::USER;
             event(new Registered($user = $this->create($request->all())));
             $this->guard()->login($user);
             return $this->registered($request, $user)

@@ -2,11 +2,11 @@
 @section('content')
     <main>
         @foreach($excursions as $item)
-                <div class="jumbotron card_company">
-                    <div class="container-fluid   ">
-                        <div class="row">
-                            <div class="col-md-3 logo_catd">
-                                <div class="company-logo-manager">
+            <div class="jumbotron card_company">
+                <div class="container-fluid   ">
+                    <div class="row">
+                        <div class="col-md-3 logo_catd">
+                            <div class="company-logo-manager">
                                 {!! Html::image('images/company/logos/'.$item->title_company.'/'.$item->logo.'') !!}
                                 </div>
                                 <div class="participents">
@@ -29,23 +29,26 @@
                             <div class="col-md-3 info_card2">
                                 <ul class="nav flex-column">
                                     <li>
-                                        <a href="#" class="review_comp"></a>
+                                        <a href="#" class="review_comp"><i class="far fa-eye fa-2x"></i></a>
                                     </li>
+                                    @if(\Illuminate\Support\Facades\Auth::user())
                                     <li class="myBtn2">
                                         <ul class="myBtn">
                                             <li>
-                                                <button type="button" class="btn btn-light partic2">Participate</button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="btn btn-light report">Report</button>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
+                                                @if($item->state == 1)
+                                                    <button type="button" class="btn btn-light report disabled">Report</button>
+                                                @else
+                                                    <button type="button" class="btn btn-light report">Report</button>
+                                                @endif
+                                        </li>
+                                    </ul>
+                                </li>
+                                @endif
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
         @endforeach
     </main>
 
