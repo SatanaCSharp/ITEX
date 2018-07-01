@@ -26,6 +26,39 @@
                                     </li>
                                 </ul>
                             </div>
+
+                        </div>
+                        <div class="col-md-6 info_card">
+                            <ul class="nav flex-column desc_comp">
+                                <li class="nav-item ">
+                                    <span class="card_title"> {{$item->title_excursion}} {{$item->date}}</span>
+                                </li>
+                                <li class="nav-item">
+                                    <p class="desc_exc">{{$item->description}} </p>
+                                </li>
+                                <li class="nav-item ">
+                                    <p class="desc_exc ">{{$item->address}} </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 info_card2">
+                            <ul class="nav flex-column">
+                                @if(\Illuminate\Support\Facades\Auth::user())
+                                <li class="myBtn2">
+                                    <ul class="myBtn">
+                                        <li>
+                                            <button type="button" class="btn btn-light partic2">Participate
+
+                                            </button>
+
+                                        </li>
+                                        <li>
+                                            @if($item->state == 1)
+                                                <button type="button" class="btn btn-light report disabled">Report</button>
+                                            @else
+                                                <button type="button" class="btn btn-light report">Report</button>
+                                            @endif
+
                             <div class="col-md-3 info_card2">
                                 <ul class="nav flex-column">
                                     <li>
@@ -40,6 +73,7 @@
                                                 @else
                                                     <button type="button" class="btn btn-light report">Report</button>
                                                 @endif
+
                                         </li>
                                     </ul>
                                 </li>
