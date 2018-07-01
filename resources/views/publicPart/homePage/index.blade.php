@@ -28,9 +28,6 @@
                         </div>
                         <div class="col-md-3 info_card2">
                             <ul class="nav flex-column">
-                                <li>
-                                    <a href="#" class="review_comp"><i class="far fa-eye fa-2x"></i></a>
-                                </li>
                                 @if(\Illuminate\Support\Facades\Auth::user())
                                 <li class="myBtn2">
                                     <ul class="myBtn">
