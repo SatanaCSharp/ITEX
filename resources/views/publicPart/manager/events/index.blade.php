@@ -3,17 +3,6 @@
 @section('content')
 
     @forelse($events as $event)
-
-
-        {{--<h3>{{$event->duration}} h</h3>--}}
-        {{--@if($event->state == 0)--}}
-            {{--<a href="{{url('/manager/events/'.$event->id.'/reports')}}">Report</a>--}}
-            {{--<a href="{{url('/manager/events/'.$event->id.'/reports/create')}}">Create report</a>--}}
-        {{--@endif--}}
-
-
-{{--########################--}}
-
     <div class="jumbotron card_company">
         <div class="container-fluid">
             <div class="row">
