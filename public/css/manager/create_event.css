@@ -6,8 +6,8 @@
     color: #666666;
 }
 
-#datetimepicker5 {
-    width: 460px;
+.datetimepicker-input {
+    width: 108%;
     margin-left: 5%;
 }
 

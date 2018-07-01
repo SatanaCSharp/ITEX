@@ -3,7 +3,6 @@
 @section('content')
 
     @forelse($events as $event)
-
     <div class="jumbotron card_company">
         <div class="container-fluid">
             <div class="row">
