@@ -1,0 +1,59 @@
+.create-coments {
+    margin: auto;
+}
+
+#create-coment {
+    background-color: #202349;
+    border: none;
+}
+
+.coments-fild {
+    background-color: #fcfbfa;
+}
+
+.com-num {
+    margin-top: 41%;
+    color: #666666;
+    font-size: 120%;
+}
+
+.coments {
+    background-color: #eeeef1;
+    display: flex;
+    margin: auto;
+    margin-bottom: 3%;
+    -webkit-border-radius: 10px;
+    height: 90px;
+    color: #666666;
+}
+
+.user-fild {
+    display: flex;
+    margin: 0.5% 0 1% 0;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.date-name {
+    justify-content: space-between;
+}
+
+.labal-name {
+    font-size: 83%;
+}
+
+.coment-desk {
+    width: 100%;
+}
+
+.name-in-coment {
+    font-weight: bold;
+}
+
+.date-time-coment {
+    font-size: 83%;
+}
+
+.text-coment {
+    min-height: 100%;
+}
