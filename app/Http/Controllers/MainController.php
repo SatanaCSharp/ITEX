@@ -11,7 +11,6 @@ class MainController extends Controller
 {
     public function index()
     {
-
         $excursions = Excursion::all();
         return view('publicPart.homePage.index',['excursions'=>$excursions]);
     }
