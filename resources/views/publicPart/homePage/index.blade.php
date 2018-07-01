@@ -29,7 +29,7 @@
                             <div class="col-md-3 info_card2">
                                 <ul class="nav flex-column">
                                     <li>
-                                        <a href="#" class="review_comp"><i class="far fa-eye fa-2x"></i></a>
+                                        <a href="#" class="review_comp"></a>
                                     </li>
                                     <li class="myBtn2">
                                         <ul class="myBtn">
