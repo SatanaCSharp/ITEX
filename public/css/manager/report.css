@@ -1,0 +1,33 @@
+.report-manager-main{
+    min-height: 250px;
+    margin: 5px auto;
+}
+
+.report-images img{
+    width: 150px;
+    height: 100px;
+    border-radius: 5%;
+    margin: 15px;
+}
+
+.report-images{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.report-title-manager h1{
+    color:#7D7D7D;
+}
+
+.report-desc-manager{
+    width: 80%;
+    margin: 25px auto;
+    color:#7D7D7D;
+}
+
+.margin-desc{
+    margin-left: 20px;
+}
