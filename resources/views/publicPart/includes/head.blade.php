@@ -8,4 +8,5 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('/css/manager/create_event.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('/css/manager/create_report.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('/css/comments/create_comments.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('/css/manager/report.css') }}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0/css/tempusdominus-bootstrap-4.min.css" />

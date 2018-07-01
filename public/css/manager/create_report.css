@@ -42,6 +42,10 @@
     margin: -26px 0 0 -47px;
 }
 
+.datetimepicker-fild {
+    width: 110%;
+}
+
 .add-images img {
     width: 34px;
 }
@@ -49,6 +53,6 @@
 #button-create {
     background-color: #202349;
     border: none;
-    margin-left: 405px;
-    width: 455px;
+    margin-left: 39.5%;
+    width: 45%;
 }

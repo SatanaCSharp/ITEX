@@ -7,13 +7,13 @@
         </div>
         <ul class="nav nav-pills menu">
             <li class="nav-item">
-                <a class="nav-link active" href="{{url('/user/events')}}">Home</a>
+                <a class="nav-link active" href="{{url('/')}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/user/companies')}}">Companies</a>
+                <a class="nav-link" href="{{url('/')}}">Companies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/user/contacts')}}">Contacts</a>
+                <a class="nav-link" href="{{url('/contacts')}}">Contacts</a>
             </li>
         </ul>
         <div class="nav authorization">
@@ -47,7 +47,6 @@
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                               style="display: none;">
                             @csrf

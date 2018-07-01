@@ -27,7 +27,7 @@
         <div class="form-group row ">
             <span class="col-md-3 lable-text">Date Creation</span>
             <div class="col-sm-6">
-                <input type="text" name="date_creation" class="form-control datetimepicker-input contacts" id="datetimepicker5"
+                <input type="text" name="date_creation" class="form-control datetimepicker-input datetimepicker-fild contacts" id="datetimepicker5"
                        data-toggle="datetimepicker" data-target="#datetimepicker5" required/>
             </div>
         </div>

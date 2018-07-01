@@ -36,16 +36,14 @@ main{
     background-color: white;
     border-radius: 50%;
     border: 1px solid black;
-    font-size: 30px;
+    font-size: 18px;
     margin-top: -36px;
     margin-left: 142px;
     position: absolute;
+    text-align: center;
+    padding-top: 1.5%;
 }
 
-.review_comp{
-    margin-left: 160px;
-    color:#4f27d8;
-}
 
 .partic2{
     color: white;
@@ -69,10 +67,6 @@ main{
     margin-top: 161px;
 }
 
-.review_comp:hover{
-    color: rgb(243, 243, 116);
-}
-
 .card_title{
     font-size: 24px;
     color:#081018;
@@ -85,9 +79,6 @@ main{
 @media (max-width: 750px) {
     .partic2{
         font-size: 14px;
-    }
-    .review_comp{
-        margin-left:50px;
     }
 
    .myBtn2{
@@ -139,4 +130,35 @@ main{
     margin-top: 65%;
     background: #202349;
     border: none;
+}
+
+/*########################*/
+
+.imgLogo{
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Manager;
 
 use App\Company;
 use App\Event;
+use App\Excursion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
@@ -14,10 +15,10 @@ class EventsController extends Controller
     {
         $id = $idCompany;
         $itemsPerPage = 5;
-        $company = Company::where('id',$idCompany)->first();
-        $events = Event::where('company_id',$idCompany)->paginate($itemsPerPage);
+        $company = Company::where('id', $idCompany)->first();
+        $events = Event::where('company_id', $idCompany)->paginate($itemsPerPage);
 
-        return view('publicPart.manager.events.index',['events'=>$events,'companyId'=>$id,'company'=>$company]);
+        return view('publicPart.manager.events.index', ['events' => $events, 'companyId' => $id, 'company' => $company]);
     }
 
     /**
@@ -28,7 +29,7 @@ class EventsController extends Controller
     public function create($idCompany)
     {
         $id = $idCompany;
-        return view('publicPart.manager.events.create',['companyId'=>$id]);
+        return view('publicPart.manager.events.create', ['companyId' => $id]);
     }
 
     /**
@@ -54,6 +55,20 @@ class EventsController extends Controller
         $event->duration = $request['duration'];
         $event->company_id = $idCompany;
         $event->save();
+
+        $company = Company::find($idCompany)->get();
+
+        $excursion = new Excursion();
+        $excursion->logo = $company[$idCompany - 2]['logo'];
+        $excursion->title_company = $company[$idCompany - 2]['title'];
+        $excursion->title_excursion = $request['title'];
+        $excursion->description = $request['description'];
+        $excursion->date = $request['date'];
+        $excursion->address = $company[$idCompany - 2]['location'];
+        $excursion->state = $request['state'];
+        $excursion->duration = $request['duration'];
+        $excursion->company_id = $idCompany;
+        $excursion->save();
 
         Session::flash('message', 'Company added!');
         Session::flash('status', 'success');
