@@ -14,4 +14,10 @@ class MainController extends Controller
         $excursions = Excursion::all();
         return view('publicPart.homePage.index',['excursions'=>$excursions]);
     }
+
+    public function show_contacts()
+    {
+
+        return view('publicPart.contacts.index');
+    }
 }
